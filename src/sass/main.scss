@@ -1,0 +1,312 @@
+@use './utilities/colors' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 1.6rem;
+	background-color: $background-color;
+	color: $text-color;
+	font-family: 'Raleway', sans-serif;
+}
+
+label {
+	margin-bottom: 0.5em;
+	font-size: 1.8rem;
+}
+
+input {
+	border-radius: 6px;
+	border: none;
+	padding: 0.5em 1em;
+	width: 70%;
+}
+
+input:focus {
+	outline: 1px solid $info-color;
+}
+
+input,
+button {
+	font-family: 'Raleway', sans-serif;
+}
+
+.app-window {
+	z-index: 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 1.8em;
+	text-align: center;
+	border-radius: 6px;
+
+	&__h1 {
+		font-size: 2rem;
+		margin-bottom: 1em;
+	}
+
+	&__number-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2em;
+		width: 100px;
+		height: 100px;
+		background-image: url('../../dist/img/question\ mark.jpg');
+		background-size: cover;
+		background-position: center;
+		border: 2px solid $unknown-number;
+		border-radius: 6px;
+		box-shadow: 0 0 10px $unknown-number;
+	}
+
+	&__unknown-number {
+		z-index: -1;
+		color: $unknown-number;
+		font-size: 7rem;
+	}
+
+	&__button {
+		margin-top: 1em;
+		padding: 0.5em 1em;
+		border-radius: 5px;
+		border: none;
+		background-color: $unknown-number;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	&__button:hover {
+		background-color: $hover-color;
+		color: $text-color;
+	}
+
+	&__info {
+		margin-top: 2em;
+		color: $info-color;
+	}
+}
+
+.popup {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.9);
+
+	&__info {
+		text-transform: uppercase;
+		margin-bottom: 0.5em;
+	}
+
+	&__details {
+		font-size: 1.2em;
+	}
+
+	&__details-number {
+		color: $unknown-number;
+		font-weight: bold;
+	}
+
+	&__a {
+		margin-top: 0.7em;
+		padding: 0.5em 1em;
+		font-weight: bold;
+		background-color: $unknown-number;
+		border-radius: 6px;
+		color: $text-color;
+		text-transform: uppercase;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	&__a:hover {
+		background-color: $hover-color;
+		color: $text-color;
+	}
+}
+
+@media (min-width: 414px) {
+	label {
+		font-size: 2rem;
+	}
+
+	input {
+		font-size: 1.7rem;
+	}
+
+	.app-window {
+		&__h1 {
+			font-size: 3rem;
+		}
+		&__number-container {
+			width: 150px;
+			height: 150px;
+		}
+		&__unknown-number {
+			font-size: 9rem;
+		}
+
+		&__button {
+			font-size: 1.6rem;
+		}
+		&__info {
+			font-size: 2.2rem;
+		}
+		.popup {
+			&__info {
+				font-size: 3rem;
+			}
+
+			&__details {
+				font-size: 1.9em;
+			}
+
+			&__a {
+				margin-top: 2em;
+				padding: 1em 1.5em;
+				font-size: 1.2em;
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		label {
+			font-size: 3rem;
+		}
+
+		input {
+			font-size: 2rem;
+		}
+
+		.app-window {
+			&__h1 {
+				font-size: 4rem;
+			}
+			&__number-container {
+				width: 200px;
+				height: 200px;
+			}
+			&__unknown-number {
+				font-size: 12rem;
+			}
+
+			&__button {
+				font-size: 2rem;
+			}
+			&__info {
+				font-size: 2.8rem;
+			}
+			.popup {
+				&__info {
+					font-size: 4.5rem;
+				}
+
+				&__details {
+					font-size: 2.5em;
+				}
+
+				&__a {
+					padding: 1.5em 3em;
+					font-size: 1.6em;
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1024px) {
+		label {
+			font-size: 4.2rem;
+		}
+
+		input {
+			font-size: 3rem;
+		}
+
+		.app-window {
+			&__h1 {
+				font-size: 5rem;
+			}
+			&__number-container {
+				width: 300px;
+				height: 300px;
+			}
+			&__unknown-number {
+				font-size: 20rem;
+			}
+
+			&__button {
+				margin-top: 4em;
+				font-size: 2rem;
+				padding: 2em 3em;
+			}
+			&__info {
+				font-size: 4.8rem;
+			}
+		}
+	}
+
+	@media (min-width: 1400px) {
+		label {
+			font-size: 3.2rem;
+		}
+
+		input {
+			width: 60%;
+			font-size: 2rem;
+		}
+
+		.app-window {
+			border: 2px solid $info-color;
+			box-shadow: 0 0 20px $info-color;
+			padding: 2em 4em;
+			background-color: $app-color;
+
+			&__h1 {
+				font-size: 4rem;
+			}
+			&__number-container {
+				width: 200px;
+				height: 200px;
+			}
+			&__unknown-number {
+				font-size: 12rem;
+			}
+
+			&__button {
+				margin-top: 4em;
+				font-size: 2rem;
+				padding: 1.8em 3em;
+			}
+			&__info {
+				font-weight: bold;
+				margin-top: 1em;
+				font-size: 3rem;
+			}
+		}
+	}
+}

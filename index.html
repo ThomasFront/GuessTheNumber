@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="shortcut icon" href="./favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/main.min.css">
+</head>
+
+<body>
+
+    <div class="app-window">
+        <h1 class="app-window__h1">Zgadnij liczbę z zakresu od 0-10</h1>
+
+        <div class="app-window__number-container" id="image"><span class="app-window__unknown-number"
+                id="unknown-number"></span></div>
+
+        <label for="number">Która liczba ukryła się pod obrazkiem?</label>
+        <input type="number" id="number" placeholder="Wpisz liczbę 0-10">
+
+        <button class="app-window__button" id="check-button">Sprawdź czy trafiłeś!</button>
+        <p class="app-window__info" id="info"></p>
+
+        <div class="popup" id="popup">
+            <h2 class="popup__info">Udało Ci się wygrać!</h2>
+            <p class="popup__details">Ukryta liczba to <span class="popup__details-number" id="popup-number"></span>
+            </p>
+            <a href="index.html" class="popup__a">Zagraj jeszcze raz!</a>
+        </div>
+
+    </div>
+
+
+    <script src="./dist/js/main.min.js"></script>
+</body>
+
+</html>
