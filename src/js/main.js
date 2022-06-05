@@ -9,7 +9,7 @@ const maxValue = 10
 const minValue = 0
 
 const checkInput = () => {
-	if (input.value !== '' && input.value <= maxValue) {
+	if (input.value !== '' && input.value <= maxValue && input.value >= minValue) {
 		info.textContent = `Ukryta liczba jest inna niż ${input.value}`
 		compareNumbers()
 	} else if (input.value == '') {
@@ -42,6 +42,7 @@ const checkEnter = e => {
 		checkInput()
 	}
 }
-input.addEventListener('keyup', checkEnter)
+
 generateNumber()
+input.addEventListener('keyup', checkEnter)
 button.addEventListener('click', checkInput)
