@@ -12,6 +12,7 @@ const checkInput = () => {
 	if (input.value !== '' && input.value <= maxValue && input.value >= minValue) {
 		info.textContent = `Ukryta liczba jest inna niż ${input.value}`
 		compareNumbers()
+		input.value = ''
 	} else if (input.value == '') {
 		info.textContent = `Najpierw wpisz liczbę`
 	} else {
